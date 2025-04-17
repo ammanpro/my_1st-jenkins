@@ -12,7 +12,7 @@ pipeline {
     stage('Run JS') {
       steps {
         // Let's run a simple JavaScript file
-        sh 'echo "console.log(\'Hello, Amman!\')" > app.js'
+        sh 'echo "console.log(\'Hello, me!\')" > app.js'
         sh 'node app.js'
       }
     }
