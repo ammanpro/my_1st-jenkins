@@ -3,10 +3,19 @@ pipeline {
     docker { image 'node:16-alpine' }
   }
   stages {
-    stage('Test') {
+    stage('Check Node') {
       steps {
         sh 'node --version'
       }
     }
+
+    stage('Run JS') {
+      steps {
+        // Let's run a simple JavaScript file
+        sh 'echo "console.log(\'Hello, Amman!\')" > app.js'
+        sh 'node app.js'
+      }
+    }
   }
 }
+
